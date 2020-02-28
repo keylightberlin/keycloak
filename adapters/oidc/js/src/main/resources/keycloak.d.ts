@@ -191,6 +191,11 @@ declare namespace Keycloak {
 		 * Example of use: { zoom: "no", hardwareback: "yes" }
 		 */
 		cordovaOptions?: { [optionName: string]: string };
+
+		/**
+		 * Parameters that will be forwarded to the Keycloak instance
+		 */
+		forwardedParameters?: { [parameter: string]: string }
 	}
 
 	type KeycloakPromiseCallback<T> = (result: T) => void;

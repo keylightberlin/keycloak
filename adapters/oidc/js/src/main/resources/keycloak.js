@@ -400,6 +400,13 @@
                 url += '&kc_locale=' + encodeURIComponent(options.kcLocale);
             }
 
+            if (options && options.forwardedParameters) {
+                var keys = Object.values(options.forwardedParameters);
+                for (var i = 0; i < keys.length; i++) {
+                    url += '&' + keys[i] + '=' + encodeURIComponent(options.forwardedParameters[keys[i]]);
+                }
+            }
+
             if (kc.pkceMethod) {
                 var codeVerifier = generateCodeVerifier(96);
                 callbackState.pkceCodeVerifier = codeVerifier;
